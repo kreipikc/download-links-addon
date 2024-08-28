@@ -16,14 +16,14 @@ btn.addEventListener("click", async () => {
         target: { tabId: tab.id, allFrames: true },
         function: grabImg,
     },
-    onResult)
-})
+    onResult);
+});
 
 
 // Ф-ция запрашивает список изоброжений (с селектором img) и возращает список URL-ов
 function grabImg() {
     const images = document.querySelectorAll("img");
-    console.log(Array.from(images).map(images=>images.src))
+    console.log(Array.from(images).map(images=>images.src));
     return Array.from(images).map(images=>images.src);
 }
 
@@ -48,7 +48,7 @@ function openImagesPage(urls) {
         setTimeout(() => {
             chrome.tabs.sendMessage(tab.id, urls, (resp) => {
                 chrome.tabs.update(tab.id, {active: true});
-            })
-        }, 500)
-    })
+            });
+        }, 500);
+    });
 }

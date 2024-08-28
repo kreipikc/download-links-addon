@@ -47,7 +47,7 @@ document.getElementById("downloadBtn").addEventListener("click", async() => {
     } catch (err) {
         alert(err.message);
     }
-})
+});
 
 
 // Ф-ция возрощает список URL всех выбранных картинок 
@@ -88,9 +88,9 @@ function checkAndGetFileName(index, blob) {
     let name = parseInt(index) + 1;
     const [type, extension] = blob.type.split("/");
     if (type != "image" || blob.size <= 0) {
-        throw Error("Неверный контент")
+        throw Error("Неверный контент");
     }
-    return name+"."+extension.split("+").shift();;
+    return name+"."+extension.split("+").shift();
 }
 
 
