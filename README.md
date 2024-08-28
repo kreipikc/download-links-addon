@@ -4,6 +4,7 @@ This is an addon for chrome, which is able to download all the images from the a
 ## What did I use to create?
 - HTML & CSS
 - JavaScript
+- module JSZip (working with ZIP-files in JS)
 - manifest.json (standard required file)
 
 
