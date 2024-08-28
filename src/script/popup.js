@@ -36,11 +36,15 @@ function onResult(frames) {
     // Собираем спсики в единый массив
     const imagesUrls = frames.map(frames=>frames.result).reduce((r1, r2)=>r1.concat(r2));
     
-    // Создаем новый элемент "a" и "file" для загрузки файла .txt со всеми URL-ами
-    let a = document.createElement("a");
-    let file = new Blob([imagesUrls.join("\n")], {type: 'application/json'});
-    a.href = URL.createObjectURL(file);
-    a.download = "links_img.txt";
-    a.click();
-    window.close();
+    openImagesPage(imagesUrls);
+}
+
+function openImagesPage(urls) { 
+    chrome.tabs.create({ "url": "page.html", active: false }, (tab) => {
+        setTimeout(() => {
+            chrome.tabs.sendMessage(tab.id, urls, (resp) => {
+                chrome.tabs.update(tab.id, {active: true});
+            })
+        }, 500)
+    })
 }
