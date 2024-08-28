@@ -1,0 +1,14 @@
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+#btn {
+    border-radius: 16px;
+    border: 0px;
+    width: 128px;
+    height: 40px;
+    font-size: 12px;
+    background-color: rgb(41, 38, 38);
+    color: white;
+}
