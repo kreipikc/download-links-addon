@@ -11,4 +11,6 @@ I also used the API for chrome extensions to create it.
 
 ## What was this project created for?
 The project was created solely to explore a new topic, namely "chrome addons".
+
+
 P.S. It was done according to the guide from the Internet.
